@@ -14,8 +14,8 @@ export class AppComponent {
   ) { }
 
   ngOnInit() {
-    console.log("login page");
-    this.router.navigate(['/login']);
+    //console.log("login page");
+    //this.router.navigate(['/login']);
     // var email = localStorage.getItem('email');    
     // console.log(email)
     // if (email == '')

@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AuthGuard } from './auth.guard';
+//import { AuthGuard } from './auth.guard';
 import { AppComponent } from './app.component';
 import { SearchComponent } from './search/search.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -16,14 +16,13 @@ import { XMasterpageComponent } from './xmasterpage/xmasterpage.component';
     SearchComponent,
     PageNotFoundComponent,
     LoginComponent,
-    XMasterpageComponent,
-    
+    XMasterpageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
   ],
-  providers: [AuthGuard,{provide: LocationStrategy, useClass: PathLocationStrategy} ],
+  providers:[], //[AuthGuard,{provide: LocationStrategy, useClass: PathLocationStrategy} ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { XmasterpageComponent } from './xmasterpage.component';
+import { XMasterpageComponent } from './xmasterpage.component';
 
 describe('XmasterpageComponent', () => {
-  let component: XmasterpageComponent;
-  let fixture: ComponentFixture<XmasterpageComponent>;
+  let component: XMasterpageComponent;
+  let fixture: ComponentFixture<XMasterpageComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ XmasterpageComponent ]
+      declarations: [ XMasterpageComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(XmasterpageComponent);
+    fixture = TestBed.createComponent(XMasterpageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

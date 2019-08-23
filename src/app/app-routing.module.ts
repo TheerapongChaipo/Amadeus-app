@@ -9,14 +9,12 @@ import { XMasterpageComponent} from './xmasterpage/xmasterpage.component'
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   {
-    path: '', component: XMasterpageComponent,   
+    path: '', component: XMasterpageComponent,
     children: [
-      { path: '', redirectTo: '/search',pathMatch:"full"}, //,canActivate: [AuthGuard]
-      {  path: 'search', component: SearchComponent,canActivate: [AuthGuard] } 
+      { path: '', redirectTo: '/search', pathMatch: 'full'},  //,canActivate: [AuthGuard]
+      {  path: 'search', component: SearchComponent}           //, canActivate: [AuthGuard] 
       // { path: 'addrate', component: AddrateComponent, canActivate: [AuthGuard]},
       // { path: 'report', component: GenarateReport1Component,  canActivate: [AuthGuard] },
-      // { path: 'genreport2', component: GenarateReport2Component, canActivate: [AuthGuard] },   
-      // { path: 'walletConfig', component: WalletConfigComponent, canActivate: [AuthGuard] } 
     ]
   },
   {  path: '**', component: PageNotFoundComponent  },
