@@ -10,6 +10,7 @@ import {LocationStrategy, PathLocationStrategy} from '@angular/common';
 import { XMasterpageComponent } from './xmasterpage/xmasterpage.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,6 +22,7 @@ import { XMasterpageComponent } from './xmasterpage/xmasterpage.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    
   ],
   providers:[], //[AuthGuard,{provide: LocationStrategy, useClass: PathLocationStrategy} ],
   bootstrap: [AppComponent]

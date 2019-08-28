@@ -3,9 +3,12 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false, 
+  AmadeusApiUrl: 'http://localhost:8081/api/Airline' , //'http://localhost:8080/xborder', //'http://10.9.214.106:32578/xborder',   //http://localhost:8080/xborder
+  SearchAirlinePath: '/SearchAirline',
+  ShortestPathPath: '/ShortestPath',
+  SearchAllRoutePath: '/allRoute',
 };
-
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.

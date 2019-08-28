@@ -1,14 +1,17 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { XMasterpageComponent } from './xmasterpage.component';
+import { RouterTestingModule } from '@angular/router/testing';
+
 
 describe('XmasterpageComponent', () => {
   let component: XMasterpageComponent;
   let fixture: ComponentFixture<XMasterpageComponent>;
-
+ 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ XMasterpageComponent ]
+      declarations: [ XMasterpageComponent ],
+      imports: [ RouterTestingModule],
     })
     .compileComponents();
   }));
@@ -19,7 +22,7 @@ describe('XmasterpageComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should create XmasterpageComponent', () => {
+    expect(component).toBeTruthy(); 
   });
 });
