@@ -1,6 +1,7 @@
-<div class="container" style="padding: 50px;">  
-  <div class="form-row">
-    <div class="col-md-4 mb-3">
+<div class="container" style="padding: 50px;">
+  <div class="form-row">  
+
+    <div class="col-sm-12 col-md-4">
       <label for="validationCustom01">From</label>
       <select class="custom-select">
         <option selected></option>
@@ -12,11 +13,11 @@
         <option value="6">F</option>
         <option value="7">G</option>
         <option value="8">H</option>
-        <option value="9">I</option>     
+        <option value="9">I</option>
       </select>
-    
+
     </div>
-    <div class="col-md-4 mb-3">
+    <div class="col-sm-12 col-md-4">
       <label for="validationCustom02">To</label>
       <select class="custom-select">
         <option selected></option>
@@ -28,93 +29,133 @@
         <option value="6">F</option>
         <option value="7">G</option>
         <option value="8">H</option>
-        <option value="9">I</option>     
+        <option value="9">I</option>
       </select>
-      
+
     </div>
-    <div class="col-md-4 mb-3">
+    <div class="col-sm-12 col-md-4 align-bottom" style="margin-top:32px;">
+      <button type="submit" class="btn btn-primary mb-2" (click)="onSearchAirline()" style="margin-right: 5px;">Search All Path</button>
+      <button type="submit" class="btn btn-primary mb-2 " (click)="onShortestPath()" style="margin-right: 5px;">Shortest Path</button>
+    </div>
+
+
+  </div>
+  <div class="form-row">
+
+    <div class="col-sm-12 col-md-8">
       <label for="validationCustom02">Route Path</label>
-      <input type="text" class="form-control" id="validationCustom02" placeholder="Last name" value="Otto" required>
+      <input type="text" class="form-control" id="txtroutepathStr" [(ngModel)]="txtroutepathStr" placeholder="e.x A-G-D" value="" required >
+    </div>
+    <!-- <div class="col-sm-12 col-md-4">
+
+
+    </div> -->
+    <div class="col-sm-12 col-md-4 align-bottom" style="margin-top:32px;">
+
+      <button type="button" class="btn btn-primary mb-2" (click)="onByroutepath()" style="margin-right: 5px;">
+        Search by Route
+      </button>
+      <button type="button" class="btn btn-info mb-2" data-toggle="modal" data-target="#exampleModalCenter"
+      (click)="onGetAllRoute()">
+       Airline
+    </button>
     </div>
 
-    <button type="submit" class="btn btn-primary mb-2">Search</button>
 
   </div>
 
 
-  <div class="row" style="margin:20px;">
-    <div class="col-md-12 rounded bg-light">
-     
+
+<div *ngIf="isShow && mode =='a'">
+  <div class="row" *ngFor="let item of SearchAirlineRoutesPath[0]">
+    <div class="col-md-12 rounded bg-light iLayout">
+
       <i class="material-icons light" style="color: dodgerblue">
         airplanemode_active
       </i>
-      Flight ID : XXXX
-      <br>
-      ToTal Distance XXX <br>
+      <span class="txtFlightID">Flight ID : TGX</span>
 
-       Routes <br>
-     
-     <!-- <i class="material-icons light"> flight_takeoff</i> -->
-      J
-      <i class="material-icons light">trending_flat </i> 
-      A 
-      <i class="material-icons light">trending_flat </i> 
-      H
-      <i class="material-icons light">trending_flat </i> 
-      G
-      <i class="material-icons light">trending_flat </i> 
-      C
-      <!-- <i class="material-icons light">  flight_land  </i> -->
+      <div class="txtTotalDis">Total cost : {{item.Cost}} Amadollars</div>
+
+      <div class="txtRoutes">Routes :</div>
+
+
+      <div class="RoutesDetail">
+        {{item.Routepath}}
+        <!-- J
+        <i class="material-icons light">trending_flat </i>
+        A
+        <i class="material-icons light">trending_flat </i>
+        H
+        <i class="material-icons light">trending_flat </i>
+        G
+        <i class="material-icons light">trending_flat </i>
+        C -->
+      </div>
+
     </div>
   </div>
-  <div class="row" style="margin:20px;">
-    <div class="col-md-12 rounded bg-light">
-     
-      <i class="material-icons light" style="color: dodgerblue">
-        airplanemode_active
-      </i>
-      Flight ID : XXXX
-      <br>
-      ToTal Distance XXX <br>
+</div>
+ 
+  <div class="row" *ngIf="isShow && mode =='b'">
+      <div class="col-md-12 rounded bg-light iLayout">
+  
+        <i class="material-icons light" style="color: dodgerblue">
+          airplanemode_active
+        </i>
+        <span class="txtFlightID">Flight ID : TGX</span>
+  
+        <div class="txtTotalDis">Total cost :  {{ResultByRoutepath}}  Amadollars</div>
+  
+        <div class="txtRoutes">Routes :</div>
+  
+  
+        <div class="RoutesDetail">
+            {{ResultByRoutepathStr}} 
+        </div>
+  
+      </div>
+    </div> 
 
-       Routes <br>
-     
-     <!-- <i class="material-icons light"> flight_takeoff</i> -->
-      J
-      <i class="material-icons light">trending_flat </i> 
-      A 
-      <i class="material-icons light">trending_flat </i> 
-      H
-      <i class="material-icons light">trending_flat </i> 
-      G
-      <i class="material-icons light">trending_flat </i> 
-      C
-      <!-- <i class="material-icons light">  flight_land  </i> -->
+  <div class="row" *ngIf="!isShow && hasData" >
+    <div class="col-md-12 rounded bg-light iLayout">
+      No data found.
     </div>
   </div>
-  <div class="row" style="margin:20px;">
-    <div class="col-md-12 rounded bg-light">
-     
-      <i class="material-icons light" style="color: dodgerblue">
-        airplanemode_active
-      </i>
-      Flight ID : XXXX
-      <br>
-      ToTal Distance XXX <br>
 
-       Routes <br>
-     
-     <!-- <i class="material-icons light"> flight_takeoff</i> -->
-      J
-      <i class="material-icons light">trending_flat </i> 
-      A 
-      <i class="material-icons light">trending_flat </i> 
-      H
-      <i class="material-icons light">trending_flat </i> 
-      G
-      <i class="material-icons light">trending_flat </i> 
-      C
-      <!-- <i class="material-icons light">  flight_land  </i> -->
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Cost</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col"><i class="material-icons light" style="color: dodgerblue"> flight_takeoff</i> From</th>
+              <th scope="col"><i class="material-icons light" style="color: dodgerblue"> flight_land </i>To</th>
+              <th scope="col">Cost (Amadollars)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of RoutesAll[0]">
+              <td>{{item.From}}</td>
+              <td>{{item.To}}</td>
+              <td>{{item.Cost}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
     </div>
   </div>
 </div>

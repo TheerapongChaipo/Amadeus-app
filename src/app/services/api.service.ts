@@ -27,7 +27,10 @@ export class ApiService {
   // การ set header ในการ call api
   restApiSendParmHasHeader(url: string, data: any) {   
     var header = new HttpHeaders(); 
-    header = header.append('Authorization', 'Bearer ' + localStorage.getItem('t')); 
+
+    
+    header = header.append('Authorization', 'Basic ' + btoa('amdtest:p@ssw0rd'));
+    //header = header.append('Authorization', 'Bearer ' + localStorage.getItem('t')); 
     header = header.append('Content-Type', 'application/json; charset=utf-8'); 
 
     return this.http.post(url, data, { headers : header }).pipe(

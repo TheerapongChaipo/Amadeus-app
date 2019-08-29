@@ -4,10 +4,11 @@
 
 export const environment = {
   production: false, 
-  AmadeusApiUrl: 'http://localhost:8081/api/Airline' , //'http://localhost:8080/xborder', //'http://10.9.214.106:32578/xborder',   //http://localhost:8080/xborder
-  SearchAirlinePath: '/SearchAirline',
-  ShortestPathPath: '/ShortestPath',
-  SearchAllRoutePath: '/allRoute',
+  AmadeusApiUrl: 'http://localhost:8081/airline',
+  SearchAirlinePath: '/search/airline',
+  ShortestPathPath: '/search/shortest',
+  SearchAllRoutePath: '/routes',
+  Searchbyroutepath: '/search/byroutepath',
 };
 /*
  * For easier debugging in development mode, you can import the following file

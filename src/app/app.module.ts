@@ -8,7 +8,8 @@ import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './app-routing.module';
 import {LocationStrategy, PathLocationStrategy} from '@angular/common';
 import { XMasterpageComponent } from './xmasterpage/xmasterpage.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -22,6 +23,8 @@ import { XMasterpageComponent } from './xmasterpage/xmasterpage.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
     
   ],
   providers:[], //[AuthGuard,{provide: LocationStrategy, useClass: PathLocationStrategy} ],
