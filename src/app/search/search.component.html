@@ -3,33 +3,15 @@
 
     <div class="col-sm-12 col-md-4">
       <label for="validationCustom01">From</label>
-      <select class="custom-select">
-        <option selected></option>
-        <option value="1">A</option>
-        <option value="2">B</option>
-        <option value="3">C</option>
-        <option value="4">D</option>
-        <option value="5">E</option>
-        <option value="6">F</option>
-        <option value="7">G</option>
-        <option value="8">H</option>
-        <option value="9">I</option>
+       <select class="custom-select"  [(ngModel)]="source">
+          <option *ngFor="let c of airline" [ngValue]="c.name">{{c.name}}</option>
       </select>
-
+      
     </div>
     <div class="col-sm-12 col-md-4">
       <label for="validationCustom02">To</label>
-      <select class="custom-select">
-        <option selected></option>
-        <option value="1">A</option>
-        <option value="2">B</option>
-        <option value="3">C</option>
-        <option value="4">D</option>
-        <option value="5">E</option>
-        <option value="6">F</option>
-        <option value="7">G</option>
-        <option value="8">H</option>
-        <option value="9">I</option>
+      <select class="custom-select"  [(ngModel)]="destination">
+          <option *ngFor="let c of airline" [ngValue]="c.name">{{c.name}}</option>
       </select>
 
     </div>
@@ -44,7 +26,7 @@
 
     <div class="col-sm-12 col-md-8">
       <label for="validationCustom02">Route Path</label>
-      <input type="text" class="form-control" id="txtroutepathStr" [(ngModel)]="txtroutepathStr" placeholder="e.x A-G-D" value="" required >
+      <input type="text" class="form-control" id="txtroutepathStr" [(ngModel)]="txtroutepathStr" placeholder="e.g. A-C-G-H-I-D" value="" required >
     </div>
     <!-- <div class="col-sm-12 col-md-4">
 
